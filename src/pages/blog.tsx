@@ -16,7 +16,7 @@ const BlogPage: React.FC<PageRendererProps> = (props) => {
             'lemoncode',
             'gatsby',
             'gatsby by sample',
-            'frontent',
+            'frontend',
             'ssr',
           ]}
         />

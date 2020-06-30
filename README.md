@@ -22,7 +22,7 @@ npm i gatsby-image -P
 npm i gatsby-transformer-sharp gatsby-plugin-sharp gatsby-source-filesystem -D
 ```
 Query to search for image:
-
+```
 query {
   homeLogo: file(relativePath: {eq: "home-logo.png"}) {
     childImageSharp {
@@ -33,7 +33,25 @@ query {
     }
   }
 }
-
+```
 
+Load posts of the blog
+```bash
+npm i gatsby-transformer-remark -D
+```
 
+Query to retrieve all posts: 
+```
+query {
+  postListQuery: allMarkdownRemark {
+    nodes {
+      frontmatter {
+        title
+        path
+      }
+    }
+  }
+}
+```
 
+Create pages dinamically: https://www.gatsbyjs.org/docs/node-apis/#createPages

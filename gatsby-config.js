@@ -41,14 +41,22 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-   'gatsby-transformer-sharp',
-   'gatsby-plugin-sharp',
-   {
-     resolve: 'gatsby-source-filesystem',
-     options: {
-       name: 'images',
-       path: path.resolve(__dirname, 'src/core/images'),
-     },
-   },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.resolve(__dirname, 'src/core/images'),
+      },
+    },
+    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: path.resolve(__dirname, 'src/common-app/mock-posts'),
+      },
+    },
   ],
 };
