@@ -14,8 +14,26 @@ To modify HTML header: https://github.com/nfl/react-helmet
 ```bash
 npm i react-helmet -P
 npm i @types/react-helmet gatsby-plugin-react-helmet -D
+```
+Library to load images: https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image
 
+```bash
+npm i gatsby-image -P
+npm i gatsby-transformer-sharp gatsby-plugin-sharp gatsby-source-filesystem -D
+```
+Query to search for image:
 
+query {
+  homeLogo: file(relativePath: {eq: "home-logo.png"}) {
+    childImageSharp {
+      fixed {
+        base64
+        originalName
+      }
+    }
+  }
+}
+
 
 
 

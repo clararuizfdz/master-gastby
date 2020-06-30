@@ -1,34 +1,31 @@
 import React from 'react';
-import {Link} from "gatsby";
-import { css } from 'emotion';
+import { PageRendererProps } from 'gatsby';
 import { SEO } from 'common/components';
+import { AppLayout } from 'layouts';
+import { Home } from 'pods/home';
 
-const root = css`
-  background-color: tomato;
-  color: white;
-  font-size: 4rem;
-  font-family: 'Open Sans';
-  padding: 2rem;
-`;
 
-const IndexPage: React.FC = () => {
-  return (
-    <>
-      <SEO
-        title="Home"
-        keywords={[
-          'lemoncode',
-          'gatsby',
-          'gatsby by sample',
-          'frontend',
-          'ssr',
-        ]}
-      />
-      <div className={root}>Hello from Gatsby</div>
-      <Link to="/blog">Navigate to blog</Link>
-    </>
-  );
-};
-
-export default IndexPage;
-
+const IndexPage: React.FC<PageRendererProps> = (props) => {
+    const { location } = props;
+    return (
+      <AppLayout
+        pathname={location.pathname}
+        seoComponent={
+          <SEO
+            title="Home"
+            keywords={[
+              'lemoncode',
+              'gatsby',
+              'gatsby by sample',
+              'frontent',
+              'ssr',
+            ]}
+          />
+        }
+      >
+        <Home />
+      </AppLayout>
+    );
+  };
+  
+  export default IndexPage;
