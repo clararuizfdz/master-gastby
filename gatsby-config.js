@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 
 module.exports = {
@@ -50,12 +51,28 @@ module.exports = {
         path: path.resolve(__dirname, 'src/core/images'),
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images-contentful',
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
         path: path.resolve(__dirname, 'src/common-app/mock-posts'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],

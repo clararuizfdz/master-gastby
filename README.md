@@ -55,3 +55,8 @@ query {
 ```
 
 Create pages dinamically: https://www.gatsbyjs.org/docs/node-apis/#createPages
+
+Para consumir contenful
+```bash
+npm i gatsby-source-contentful gatsby-remark-images-contentful -D
+```
